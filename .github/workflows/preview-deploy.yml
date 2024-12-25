@@ -1,0 +1,46 @@
+name: Preview Build and Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1 Checkout repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # 2 Install node
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 22
+    
+    # 3 Install dependencies, build app
+    - name: Install dependencies and build
+      env:
+        CI: false
+      run: |
+        npm install
+        npm run build
+
+    # Step 4: Copy api files and dist folder to preview
+    - name: Deploy to preview branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        mkdir dist
+        cp -R api dist/
+        cp -R _dist/* dist/
+        
+        cd dist
+        git init
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+
+        git add .
+        git commit -m "Deploy preview build from dev
+        git branch -M preview
+        git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ZNGR-DYNAMICS/BanhMiBros.git preview
