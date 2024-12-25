@@ -15,6 +15,9 @@ dist-ssr
 # Environment Variables
 .env*
 
+# Vite build folder
+_dist
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
