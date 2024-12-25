@@ -26,7 +26,7 @@ jobs:
         npm install
         npm run build:prev
 
-    # Step 4: Copy api files and dist folder to preview
+    # 4 Copy api files and dist folder to preview
     - name: Deploy to preview branch
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
