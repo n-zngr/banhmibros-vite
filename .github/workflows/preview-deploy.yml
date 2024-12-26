@@ -43,4 +43,4 @@ jobs:
         git add .
         git commit -m "Deploy preview build from dev"
         git branch -M preview
-        git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ZNGR-DYNAMICS/BanhMiBros.git preview
+        git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ZNGR-DYNAMICS/banhmibros-vite.git preview
