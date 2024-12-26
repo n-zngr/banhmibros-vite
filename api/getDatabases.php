@@ -1,6 +1,6 @@
 <?php
 
-require_once 'env.php';
+require_once 'config.php';
 
 loadEnv();
 
@@ -8,13 +8,13 @@ loadEnv();
 $currentEnv = getenv('ENVIRONMENT');
 if ($currentEnv === 'dev') {
     header('Access-Control-Allow-Origin: *');
-    header('Access-Control-Allow-Methods');
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type');
 }
 header('Content-Type: application/json');
 
 
-$servername = getenv('DB_HOST');
+$servername = getenv('DB_SERVER');
 $username = getenv('DB_USER');
 $password = getenv('DB_PASSWORD');
 
