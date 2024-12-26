@@ -5,25 +5,28 @@ const DatabaseViewer = () => {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        const apiBaseUrl = import.meta.env.VITE_API_URL;
-        console.log(apiBaseUrl);
-        console.log(import.meta.env);
+        fetch('../api/api-config.json')
+            .then(response => response.json()) 
+            .then(config => {
+                const apiUrl = config.apiUrl; // Use the apiUrl directly from the config
 
-        fetch(`${apiBaseUrl}/getDatabases.php`)
-            .then(response => {
-                if (!response.ok) {
+            fetch(`${apiUrl}/getDatabases.php`)
+                .then(response => {
+                    if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.error) {
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.error) {
                     setError(data.error);
-                } else {
+                    } else {
                     setDatabases(data);
-                }
+                    }
+                })
+                .catch(err => setError('Failed to fetch databases: ' + err.message));
             })
-            .catch(err => setError('Failed to fetch databases: ' + err.message));
+        .catch(err => setError('Failed to fetch configuration: ' + err.message)); 
     }, []);
 
   if (error) return <div>Error: {error}</div>;
