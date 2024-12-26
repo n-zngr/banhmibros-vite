@@ -45,4 +45,4 @@ jobs:
         git add .
         git commit -m "Deploy production build from main"
         git branch -M production
-        git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ZNGR-DYNAMICS/BanhMiBros.git production
+        git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ZNGR-DYNAMICS/banhmibros-vite.git production
