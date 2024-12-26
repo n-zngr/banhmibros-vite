@@ -6,6 +6,8 @@ const DatabaseViewer = () => {
 
     useEffect(() => {
         const apiBaseUrl = import.meta.env.VITE_API_URL;
+        console.log(apiBaseUrl);
+        console.log(import.meta.env);
 
         fetch(`${apiBaseUrl}/getDatabases.php`)
             .then(response => {
