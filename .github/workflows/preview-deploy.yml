@@ -24,7 +24,7 @@ jobs:
         CI: false
       run: |
         npm install
-        npm run build:prev
+        npm run build
 
     # 4 Copy api files and dist folder to preview
     - name: Deploy to preview branch
