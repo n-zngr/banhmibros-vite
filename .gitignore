@@ -15,6 +15,9 @@ dist-ssr
 # Environment Variables
 .env*
 
+# php environment
+config.*.php
+
 # Vite build folder
 _dist
 
