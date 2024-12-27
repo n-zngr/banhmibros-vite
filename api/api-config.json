@@ -1,5 +1,5 @@
 {
-    "apiUrl": "http://localhost:8000/api", 
+    "devApiUrl": "http://localhost:8000/api",
     "previewApiUrl": "https://vite.zngr-dynamics.ch/api",
-    "productionApiUrl": "https://api.yourdomain.com" 
-  }
+    "productionApiUrl": "https://api.yourdomain.com"
+}
