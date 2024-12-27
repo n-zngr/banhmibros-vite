@@ -1,5 +1,5 @@
 <?php
-
+/*
 function detectEnvironment() {
     $PREV_DOMAIN = "vite.zngr-dynamics.ch";
     $PROD_DOMAIN = "banhmibros.ch";
@@ -32,4 +32,4 @@ function loadEnv() {
         putenv("$name=$value");
         $_ENV[$name] = $value;
     }
-}
+}*/
