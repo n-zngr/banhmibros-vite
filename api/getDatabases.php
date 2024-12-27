@@ -2,10 +2,7 @@
 
 require_once 'config.php';
 
-loadEnv();
-
-
-$currentEnv = getenv('ENVIRONMENT');
+$currentEnv = getEnvironment();
 if ($currentEnv === 'dev') {
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
@@ -13,13 +10,22 @@ if ($currentEnv === 'dev') {
 }
 header('Content-Type: application/json');
 
+try {
+    $config = getConfig();
+    $servername = $config['DB_SERVER'] ?? null;
+    $username = $config['DB_USERNAME'] ?? null;
+    $password = $config['DB_PASSWORD'] ?? null;
+    $database = $config['DB_NAME'] ?? null;
 
-$servername = getenv('DB_SERVER');
-$username = getenv('DB_USER');
-$password = getenv('DB_PASSWORD');
+    if (!$servername || !$username || !$database) {
+        throw new Exception("Database configuration is incomplete.");
+    }
+} catch (Exception $e) {
+    echo json_encode(['error' => $e->getMessage()]);
+    exit;
+}
 
 $conn = new mysqli($servername, $username, $password);
-
 if ($conn->connect_error) {
     echo json_encode(['error' => 'Connection failed: ' . $conn->connect_error]);
     exit;
@@ -28,32 +34,36 @@ if ($conn->connect_error) {
 $response = [];
 
 try {
-    $database = getenv('DB_NAME');
+    if (!$conn->select_db($database)) {
+        throw new Exception("Database '$database' not found or access denied.");
+    }
 
-    if ($conn->select_db($database)) {
-        $dbDetails = ['name' => $database, 'tables' => []];
-
-        $tablesResult = $conn->query("SHOW TABLES");
+    $dbDetails = ['name' => $database, 'tables' => []];
+    $tablesResult = $conn->query("SHOW TABLES");
+    if ($tablesResult) {
         while ($tableRow = $tablesResult->fetch_row()) {
             $table = $tableRow[0];
             $tableData = ['name' => $table, 'rows' => []];
 
-            $contentResult = $conn->query("SELECT * FROM $table LIMIT 100");
+            $contentResult = $conn->query("SELECT * FROM `$table` LIMIT 100");
             if ($contentResult) {
                 while ($contentRow = $contentResult->fetch_assoc()) {
                     $tableData['rows'][] = $contentRow;
                 }
+                $contentResult->free();
             }
 
             $dbDetails['tables'][] = $tableData;
         }
-
-        $response[] = $dbDetails;
+        $tablesResult->free();
     } else {
-        throw new Exception("Database '$database' not found or access denied.");
+        throw new Exception("Failed to fetch tables from the database.");
     }
+
+    $response[] = $dbDetails;
 } catch (Exception $error) {
     echo json_encode(['error' => $error->getMessage()]);
+    $conn->close();
     exit;
 }
 

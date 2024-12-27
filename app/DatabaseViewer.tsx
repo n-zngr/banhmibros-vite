@@ -1,32 +1,38 @@
 import { useEffect, useState } from 'react';
+import apiConfig from '../api/api-config.json';
 
 const DatabaseViewer = () => {
     const [databases, setDatabases] = useState<any[]>([]);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        fetch('../api/api-config.json')
-            .then(response => response.json()) 
-            .then(config => {
-                const apiUrl = config.apiUrl; // Use the apiUrl directly from the config
+        const hostname = window.location.hostname;
+        let apiUrl = apiConfig.devApiUrl;
 
-            fetch(`${apiUrl}/getDatabases.php`)
-                .then(response => {
-                    if (!response.ok) {
+        const PREV_DOMAIN = 'vite.zngr-dynamics.ch';
+        const PROD_DOMAIN = 'prod-domain.ch';
+
+        if (hostname.includes(PREV_DOMAIN)) {
+            apiUrl = apiConfig.previewApiUrl;
+        } else if (hostname.includes(PROD_DOMAIN)) {
+            apiUrl = apiConfig.productionApiUrl;
+        }
+
+        fetch(`${apiUrl}/getDatabases.php`)
+            .then(response => {
+                if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    if (data.error) {
-                    setError(data.error);
-                    } else {
-                    setDatabases(data);
-                    }
-                })
-                .catch(err => setError('Failed to fetch databases: ' + err.message));
+                }
+                return response.json();
             })
-        .catch(err => setError('Failed to fetch configuration: ' + err.message)); 
+            .then(data => {
+                if (data.error) {
+                    setError(data.error);
+                } else {
+                    setDatabases(data);
+                }
+            })
+            .catch(err => setError('Failed to fetch databases: ' + err.message));
     }, []);
 
   if (error) return <div>Error: {error}</div>;
