@@ -40,9 +40,9 @@ export default {
                 },
                 bmb: {
                     orange: '#F19100',
-                    tomato_red: '#B3001B',
-                    salad_green: '#498450',
-                    forrest_green: '#0D3633',
+                    red: '#B3001B',
+                    green: '#498450',
+                    dark_green: '#0D3633',
                 },
 
             }
