@@ -12,8 +12,8 @@ function App() {
     <div className='h-screen w-screen'>
         <Navigation />
         <main className="p-8">
-            <h1 className="text-4xl font-bold">Welcome to My App</h1>
-            <p className="mt-4 text-lg">
+            <h1 className="text-4xl font-bold font-circula">Welcome to My App</h1>
+            <p className="mt-4 text-lg font-poppins text-red-500">
                 Swipe right to open the navigation, or click the button in the top-left corner.
             </p>
         </main>
