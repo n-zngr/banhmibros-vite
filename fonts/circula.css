@@ -1,6 +1,37 @@
 @font-face { /*Medium*/
     font-family: 'Circula';
-    src: url(/public/fonts/circula/Circula-Medium.otf);
+    src: url(/public/fonts/circula/Circula-Medium.otf) format('opentype');
     font-weight: 500;
     font-style: normal;
+}
+@font-face { /*Bold*/
+    font-family: 'Circula';
+    src: url(/public/fonts/circula/Circula-Medium.otf) format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face { /*Black*/
+    font-family: 'Circula';
+    src: url(/public/fonts/circula/Circula-Medium.otf) format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.circula {
+    font-family: 'Circula', sans-serif;
+    font-weight: 500;
+}
+
+.circula-bold {
+    font-family: 'Circula', sans-serif;
+    font-weight: 700;
+    -webkit-text-stroke: 0.0625rem currentColor;
+    text-stroke: 0.0625rem currentColor;
+}
+
+.circula-black {
+    font-family: 'Circula', sans-serif;
+    font-weight: 900;
+    -webkit-text-stroke: 0.125rem currentColor;
+    text-stroke: 0.125rem currentColor;
 }
