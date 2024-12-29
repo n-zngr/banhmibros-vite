@@ -1,56 +1,58 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSwipeable } from 'react-swipeable';
 
-const Navigation: React.FC = () => {
-    const [isOpen, setIsOpen] = useState(false);
+interface NavigationProps {
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+}
 
+const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
     const swipeHandlers = useSwipeable({
         onSwipedLeft: () => setIsOpen(false),
-        onSwipedRight: () => setIsOpen(true),
         preventScrollOnSwipe: true,
-        trackTouch: true
+        trackTouch: true,
     });
 
     return (
-        <div {...swipeHandlers} className='relative w-full h-full'>
-            {/*Top-left naivgation button*/}
+        <div
+            {...swipeHandlers}
+            className={`fixed inset-0 z-50 bg-white h-screen w-screen transition-transform duration-500 ${
+            isOpen ? 'translate-x-0' : '-translate-x-full'
+            }`}
+        >
+            {/* Navigation Button */}
             <button
-                className='fixed top-4 left-4 z-50 bg-gray-800 text-white px-4 py-2 rounded-md shadow-md' 
-                onClick={() => setIsOpen((prev) => !prev)}
+                className="absolute top-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-md shadow-md"
+                onClick={() => setIsOpen(!isOpen)}
             >
                 Menu
             </button>
-            {/* Overlay for mobile swipe */}
-            <div
-                className={`fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40 transition-opacity ${
-                isOpen ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-                onClick={() => setIsOpen(false)}
-            ></div>
 
-            {/* Navigation Drawer */}
-            <div
-                className={`fixed top-0 left-0 h-full bg-white shadow-md w-64 z-50 transform transition-transform duration-300 ${
-                isOpen ? "translate-x-0" : "-translate-x-full"
-                }`}
-            >
-                <nav className="flex flex-col space-y-4 p-4">
-                <a href="#" className="text-lg font-semibold text-gray-800">
-                    Home
-                </a>
-                <a href="#" className="text-lg font-semibold text-gray-800">
-                    About
-                </a>
-                <a href="#" className="text-lg font-semibold text-gray-800">
-                    Services
-                </a>
-                <a href="#" className="text-lg font-semibold text-gray-800">
-                    Contact
-                </a>
-                </nav>
-            </div>
+            {/* Navigation Content */}
+            <nav className="flex flex-col space-y-4 p-8 h-full">
+                <h1>
+                    <a href="#" className="text-2xl font-semibold text-gray-800">
+                        Home
+                    </a>
+                </h1>
+                <h1>
+                    <a href="#" className="text-2xl font-semibold text-gray-800">
+                        About
+                    </a>
+                </h1>
+                <h1>
+                    <a href="#" className="text-2xl font-semibold text-gray-800">
+                        Services
+                    </a>
+                </h1>
+                <h1>
+                    <a href="#" className="text-2xl font-semibold text-gray-800">
+                        Contact
+                    </a>
+                </h1>
+            </nav>
         </div>
-    )
-}
+    );
+};
 
 export default Navigation;
