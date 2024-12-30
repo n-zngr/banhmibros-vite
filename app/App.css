@@ -4,7 +4,7 @@
 
 @layer base {
     h1 {
-      @apply circula-bold;
+      @apply circula-black;
     }
     h2, h3, p {
         font-family: 'Poppins';

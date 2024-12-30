@@ -45,6 +45,9 @@ export default {
                     dark_green: '#0D3633',
                 },
 
+            },
+            scale: {
+                133: '1.33'
             }
         },
     },
