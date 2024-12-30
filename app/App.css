@@ -1,12 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@keyframes svgFadeInOut {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    33% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    66% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
 
-@layer base {
-    h1 {
-      @apply circula-black;
-    }
-    h2, h3, p {
-        font-family: 'Poppins';
-    }
-  }
+.animate-arrow-down {
+    animation: svgFadeInOut 3s ease-in-out infinite;
+}
