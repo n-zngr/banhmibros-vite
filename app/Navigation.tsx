@@ -136,15 +136,15 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
             {/* Socials Section (Large Screen) */}
             <div className="hidden lg:flex absolute bottom-8 left-8 gap-8 font-poppins font-medium text-xl">
                 <a href="https://instagram.com/banhmibros_ch/" className="flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300">
-                    <img className="h-8 w-8" src="./app/assets/icon-instagram.png" alt="" />
+                    <img className="h-8 w-8" src="./assets/icon-instagram.png" alt="" />
                     <p>Instagram</p>
                 </a>
                 <a href="https://www.facebook.com/people/Banh-Mi-Bros/61558393710150/" className="flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300">
-                    <img className="h-8 w-8" src="./app/assets/icon-facebook.png" alt="" />
+                    <img className="h-8 w-8" src="./assets/icon-facebook.png" alt="" />
                     <p>Facebook</p>
                 </a>
                 <a href="https://www.tiktok.com/@banh.mi.bros" className="flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300">
-                    <img className="h-8 w-8" src="./app/assets/icon-tiktok.png" alt="" />
+                    <img className="h-8 w-8" src="./assets/icon-tiktok.png" alt="" />
                     <p>TikTok</p>
                 </a>
             </div>
