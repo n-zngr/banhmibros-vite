@@ -12,6 +12,9 @@ export default {
                 circula: ['Circula', 'sans-serif'],
                 poppins: ['Poppins', 'sans-serif'],
             },
+            fontSize: {
+                '10xl': '10',
+            },
             colors: {
                 black: {
                     100: '#0D0A07',
@@ -64,11 +67,17 @@ export default {
                     WebkitTextStroke: '0.0625rem currentColor',
                     textStroke: '0.0625rem currentColor',
                 },
+                '.circula-extrabold': {
+                    fontFamily: 'Circula, sans-serif',
+                    fontWeight: '800',
+                    WebkitTextStroke: '0.125rem currentColor',
+                    textStroke: '0.125rem currentColor',
+                },
                 '.circula-black': {
                     fontFamily: 'Circula, sans-serif',
                     fontWeight: '900',
-                    WebkitTextStroke: '0.125rem currentColor',
-                    textStroke: '0.125rem currentColor',
+                    WebkitTextStroke: '0.2rem currentColor',
+                    textStroke: '0.2rem currentColor',
                 },
             })
         }),
