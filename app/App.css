@@ -20,3 +20,49 @@
 .animate-arrow-down {
     animation: svgFadeInOut 3s ease-in-out infinite;
 }
+
+
+
+@keyframes arrowSlideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes arrowSlideOut {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.animate-nav-left-arrow {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+a:hover .animate-nav-left-arrow {
+    animation: arrowSlideIn 0.5s forwards;
+}
+
+a:not(:hover) .animate-nav-left-arrow {
+    animation: arrowSlideOut 0.5s forwards;
+}

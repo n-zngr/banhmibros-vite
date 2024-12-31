@@ -28,7 +28,7 @@ function App() {
                 <header className='relative w-full h-screen'>
                     {/* Toggle Navigation Button */}
                     <div className='absolute top-8 left-8'>
-                        <div className='flex flex-col gap-8 lg:gap-16 circula-bold lg:circula-black text-9xl text-white-500 transition-colors'>
+                        <div className='flex flex-col gap-8 lg:gap-16 circula-bold lg:circula-black text-white-500 transition-colors'>
                             <div className='flex'>
                                 <button
                                     className="block transition duration-200 hover:text-bmb-orange"
@@ -54,7 +54,7 @@ function App() {
                                     </svg>
                                 </button>
                             </div>
-                            <div className='flex flex-col gap-4 text-6xl md:text-8xl lg:text-9xl'>
+                            <nav className='flex flex-col gap-4 text-6xl md:text-8xl lg:text-9xl'>
                                 <h1 className='hover:text-bmb-orange transition-colors duration-300'>
                                     <a href="/home">Home</a>
                                 </h1>
@@ -67,7 +67,7 @@ function App() {
                                 <h1 className="hover:text-bmb-orange transition-colors duration-300">
                                     <a href="/contact">Contact</a>
                                 </h1>
-                            </div>
+                            </nav>
                             <div className='hover:text-bmb-orange transition-colors duration-300'>
                                 <a className="flex flex-row gap-8 items-center" href="#test">
                                     <h2 className="font-bold text-2xl md:text-4xl lg:text-6xl max-w-[calc(100vw-16rem)] text-[clamp(2rem,5vw,8rem)]">

@@ -16,12 +16,12 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
     return (
         <div
             {...swipeHandlers}
-            className={`absolute inset-0 bg-white-500 text-black-500 h-screen w-screen transition-transform ease-in-out duration-500 ${
+            className={`absolute inset-0 bg-white-500 text-black-500 h-screen w-screen overflow-y-auto transition-transform ease-in-out duration-500 ${
             isOpen ? 'translate-x-0' : '-translate-x-full'
             }`}
         >
-            {/* Navigation Button */}
-            <div className='absolute top-8 right-8 flex flex-col gap-8 text-lg'>
+            {/* Navigation Right */}
+            <div className='absolute top-4 right-4 lg:top-8 lg:right-8 flex flex-col gap-8'>
                 <button
                     className="self-end duration-200 hover:text-bmb-orange"
                     onClick={() => setIsOpen(!isOpen)}
@@ -31,8 +31,72 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
                         <path d="M2.82843 0L25.4558 22.6274L22.6274 25.4558L0 2.82843L2.82843 0Z"/>
                     </svg>
                 </button>
-                <div className='flex flex-col text-right gap-4'>
-                    <h1 className='md:text-3xl lg:text-5xl circula-bold'>
+                {/* Address Section (Large Screens) */}
+                <div className="hidden md:flex flex-col text-right gap-4 font-medium text-sm md:text-base lg:text-xl">
+                    <h1 className="text-3xl md:text-4xl lg:text-6xl circula-bold">Banh Mi Bros</h1>
+                    <div>
+                        <p>Metzgergasse 15</p>
+                        <p>9000 St.Gallen</p>
+                    </div>
+                    <div>
+                        <a href="mailto:hello@banh-mi-bros.ch">hello[at]banh-mi-bros.ch</a>
+                        <p>078 480 92 23</p>
+                    </div>
+                </div>
+            </div>
+            {/* Navigation Left */}
+            <div className='absolute top-4 left-4 lg:top-8 lg:left-8 flex flex-col gap-8 lg:gap-16'>
+                <nav className="flex flex-col gap-4 text-6xl md:text-8xl lg:text-9xl sm:circula-bold md:circula-extrabold lg:circula-black">
+                    <a className='flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300'>
+                        <h1>
+                            Home
+                        </h1>
+                        <svg className='animate-nav-left-arrow' width="50" height="34" viewBox="0 0 50 34" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M31.0792 1.5207C31.8002 0.826434 32.9691 0.826434 33.69 1.5207L48.4593 15.7429C49.1802 16.4372 49.1802 17.5628 48.4593 18.2571L33.69 32.4793C32.9691 33.1736 31.8002 33.1736 31.0792 32.4793C30.3582 31.785 30.3582 30.6594 31.0792 29.9651L42.6968 18.7778H2.84615C1.82655 18.7778 1 17.9818 1 17C1 16.0182 1.82655 15.2222 2.84615 15.2222H42.6968L31.0792 4.03486C30.3582 3.34059 30.3582 2.21496 31.0792 1.5207Z"
+                                fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a className='flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300' href="/menu">
+                        <h1>
+                            Menu
+                        </h1>
+                        <svg className='animate-nav-left-arrow' width="50" height="34" viewBox="0 0 50 34" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M31.0792 1.5207C31.8002 0.826434 32.9691 0.826434 33.69 1.5207L48.4593 15.7429C49.1802 16.4372 49.1802 17.5628 48.4593 18.2571L33.69 32.4793C32.9691 33.1736 31.8002 33.1736 31.0792 32.4793C30.3582 31.785 30.3582 30.6594 31.0792 29.9651L42.6968 18.7778H2.84615C1.82655 18.7778 1 17.9818 1 17C1 16.0182 1.82655 15.2222 2.84615 15.2222H42.6968L31.0792 4.03486C30.3582 3.34059 30.3582 2.21496 31.0792 1.5207Z"
+                                fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a className='flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300' href="/banh-mi">
+                        <h1>
+                            Banh Mi
+                        </h1>
+                        <svg className='animate-nav-left-arrow' width="50" height="34" viewBox="0 0 50 34" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M31.0792 1.5207C31.8002 0.826434 32.9691 0.826434 33.69 1.5207L48.4593 15.7429C49.1802 16.4372 49.1802 17.5628 48.4593 18.2571L33.69 32.4793C32.9691 33.1736 31.8002 33.1736 31.0792 32.4793C30.3582 31.785 30.3582 30.6594 31.0792 29.9651L42.6968 18.7778H2.84615C1.82655 18.7778 1 17.9818 1 17C1 16.0182 1.82655 15.2222 2.84615 15.2222H42.6968L31.0792 4.03486C30.3582 3.34059 30.3582 2.21496 31.0792 1.5207Z"
+                                fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a className='flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300' href="/order">
+                        <h1>
+                            Order
+                        </h1>
+                        <svg className='animate-nav-left-arrow' width="50" height="34" viewBox="0 0 50 34" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M31.0792 1.5207C31.8002 0.826434 32.9691 0.826434 33.69 1.5207L48.4593 15.7429C49.1802 16.4372 49.1802 17.5628 48.4593 18.2571L33.69 32.4793C32.9691 33.1736 31.8002 33.1736 31.0792 32.4793C30.3582 31.785 30.3582 30.6594 31.0792 29.9651L42.6968 18.7778H2.84615C1.82655 18.7778 1 17.9818 1 17C1 16.0182 1.82655 15.2222 2.84615 15.2222H42.6968L31.0792 4.03486C30.3582 3.34059 30.3582 2.21496 31.0792 1.5207Z"
+                                fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a className='flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300' href="/catering">
+                        <h1>
+                            Catering
+                        </h1>
+                        <svg className='animate-nav-left-arrow' width="50" height="34" viewBox="0 0 50 34" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M31.0792 1.5207C31.8002 0.826434 32.9691 0.826434 33.69 1.5207L48.4593 15.7429C49.1802 16.4372 49.1802 17.5628 48.4593 18.2571L33.69 32.4793C32.9691 33.1736 31.8002 33.1736 31.0792 32.4793C30.3582 31.785 30.3582 30.6594 31.0792 29.9651L42.6968 18.7778H2.84615C1.82655 18.7778 1 17.9818 1 17C1 16.0182 1.82655 15.2222 2.84615 15.2222H42.6968L31.0792 4.03486C30.3582 3.34059 30.3582 2.21496 31.0792 1.5207Z"
+                                fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </nav>
+
+                {/* Address (Small Screen) */}
+                <div className="flex flex-col md:hidden gap-2 text-base font-medium">
+                    <h1 className='text-3xl md:text-4xl circula-bold'>
                         Banh Mi Bros
                     </h1>
                     <div>
@@ -40,62 +104,49 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
                         <p>9000 St.Gallen</p>
                     </div>
                     <div>
-                        <p>hello@banhmibros.ch</p>
+                        <a href='mailto:hello@banh-mi-bros.ch'>hello[at]banh-mi-bros.ch</a>
                         <p>078 480 92 23</p>
                     </div>
                 </div>
+                {/* Socials (Small & Medium Screen) */}
+                <div className="flex flex-row flex-wrap gap-4 pb-4 lg:hidden font-poppins font-medium text-sm">
+                    <a
+                        href="#"
+                        className="flex flex-row gap-2 items-center hover:text-bmb-orange transition-colors duration-300"
+                    >
+                        <img className="h-6 w-6" src="./app/assets/icon-instagram.png" alt="" />
+                        <p>Instagram</p>
+                    </a>
+                    <a
+                        href="#"
+                        className="flex flex-row gap-2 items-center hover:text-bmb-orange transition-colors duration-300"
+                    >
+                        <img className="h-6 w-6" src="./app/assets/icon-facebook.png" alt="" />
+                        <p>Facebook</p>
+                    </a>
+                    <a
+                        href="#"
+                        className="flex flex-row gap-2 items-center hover:text-bmb-orange transition-colors duration-300"
+                    >
+                        <img className="h-6 w-6" src="./app/assets/icon-tiktok.png" alt="" />
+                        <p>TikTok</p>
+                    </a>
+                </div>  
             </div>
-            {/* Navigation Content */}
-            <div className='absolute top-8 left-8'>
-                <div className='flex flex-col gap-8 lg:gap-16'>
-                    <nav className="flex flex-col gap-4 text-6xl md:text-8xl lg:text-9xl sm:circula-bold md:circula-bold lg:circula-black">
-                        <h1 className='hover:text-bmb-orange transition-colors duration-300'>
-                            <a href="#">
-                                Home
-                            </a>
-                        </h1>
-                        <h1 className='hover:text-bmb-orange transition-colors duration-300'>
-                            <a href="#">
-                                Menu
-                            </a>
-                        </h1>
-                        <h1 className='hover:text-bmb-orange transition-colors duration-300'>
-                            <a href="#">
-                                Banh Mi
-                            </a>
-                        </h1>
-                        <h1 className='hover:text-bmb-orange transition-colors duration-300'>
-                            <a href="#">
-                                Order
-                            </a>
-                        </h1>
-                        <h1 className='hover:text-bmb-orange transition-colors duration-300'>
-                            <a href="#">
-                                Catering
-                            </a>
-                        </h1>
-                    </nav>
-                    <div className='flex flex-row gap-8 font-poppins font-medium text-2xl'>
-                        <a href="" className='flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300'>
-                            <img src="./app/assets/icon-instagram.png" alt="" />
-                            <p>
-                                Instagram
-                            </p>
-                        </a>
-                        <a href="" className='flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300'>
-                            <img src="./app/assets/icon-facebook.png" alt="" />
-                            <p>
-                                Facebook
-                            </p>
-                        </a>
-                        <a href="" className='flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300'>
-                            <img src="./app/assets/icon-tiktok.png" alt="" />
-                            <p>
-                                TikTok
-                            </p>
-                        </a>
-                    </div>
-                </div>
+            {/* Socials Section (Large Screen) */}
+            <div className="hidden lg:flex absolute bottom-8 left-8 gap-8 font-poppins font-medium text-xl">
+                <a href="https://instagram.com/banhmibros_ch/" className="flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300">
+                    <img className="h-8 w-8" src="./app/assets/icon-instagram.png" alt="" />
+                    <p>Instagram</p>
+                </a>
+                <a href="https://www.facebook.com/people/Banh-Mi-Bros/61558393710150/" className="flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300">
+                    <img className="h-8 w-8" src="./app/assets/icon-facebook.png" alt="" />
+                    <p>Facebook</p>
+                </a>
+                <a href="https://www.tiktok.com/@banh.mi.bros" className="flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300">
+                    <img className="h-8 w-8" src="./app/assets/icon-tiktok.png" alt="" />
+                    <p>TikTok</p>
+                </a>
             </div>
         </div>
     );
