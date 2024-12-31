@@ -114,21 +114,21 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
                         href="#"
                         className="flex flex-row gap-2 items-center hover:text-bmb-orange transition-colors duration-300"
                     >
-                        <img className="h-6 w-6" src="./app/assets/icon-instagram.png" alt="" />
+                        <img className="h-6 w-6" src="./assets/icon-instagram.png" alt="" />
                         <p>Instagram</p>
                     </a>
                     <a
                         href="#"
                         className="flex flex-row gap-2 items-center hover:text-bmb-orange transition-colors duration-300"
                     >
-                        <img className="h-6 w-6" src="./app/assets/icon-facebook.png" alt="" />
+                        <img className="h-6 w-6" src="./assets/icon-facebook.png" alt="" />
                         <p>Facebook</p>
                     </a>
                     <a
                         href="#"
                         className="flex flex-row gap-2 items-center hover:text-bmb-orange transition-colors duration-300"
                     >
-                        <img className="h-6 w-6" src="./app/assets/icon-tiktok.png" alt="" />
+                        <img className="h-6 w-6" src="./assets/icon-tiktok.png" alt="" />
                         <p>TikTok</p>
                     </a>
                 </div>  
