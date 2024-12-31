@@ -76,8 +76,8 @@ export default {
                 '.circula-black': {
                     fontFamily: 'Circula, sans-serif',
                     fontWeight: '900',
-                    WebkitTextStroke: '0.2rem currentColor',
-                    textStroke: '0.2rem currentColor',
+                    WebkitTextStroke: '0.25rem currentColor',
+                    textStroke: '0.25rem currentColor',
                 },
             })
         }),
