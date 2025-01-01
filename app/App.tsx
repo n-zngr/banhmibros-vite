@@ -70,7 +70,7 @@ function App() {
                             </nav>
                             <div className='hover:text-bmb-orange transition-colors duration-300'>
                                 <a className="flex flex-row gap-8 items-center" href="#test">
-                                    <h2 className="font-bold text-2xl md:text-4xl lg:text-6xl max-w-[calc(100vw-16rem)] text-[clamp(2rem,5vw,8rem)]">
+                                    <h2 className="text-wrap font-bold text-2xl md:text-4xl lg:text-6xl">
                                         AUTHENTIC VIETNAMESE STREETFOOD
                                     </h2>
                                     <svg className='justify-self-center animate-arrow-down' width="32" height="48" viewBox="0 0 32 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
