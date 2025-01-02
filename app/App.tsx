@@ -18,7 +18,7 @@ function App() {
     });
 
     return (
-        <div {...swipeHandlers} className="relative h-screen overflow-hidden">
+        <div {...swipeHandlers} className="relative h-dvh overflow-hidden">
             <Navigation isOpen={isOpen} setIsOpen={setIsOpen} />
             <div
                 className={`absolute inset-0 transition-transform duration-500 ease-in-out ${

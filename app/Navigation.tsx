@@ -17,7 +17,7 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
     return (
         <div
             {...swipeHandlers}
-            className={`absolute inset-0 bg-white-500 text-black-500 h-screen w-screen overflow-y-auto overflow-x-hidden transition-transform ease-in-out duration-500 ${
+            className={`absolute inset-0 bg-white-500 text-black-500 h-dvh w-screen overflow-y-auto overflow-x-hidden transition-transform ease-in-out duration-500 ${
             isOpen ? 'translate-x-0' : '-translate-x-full'
             }`}
         >
