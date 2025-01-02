@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSwipeable } from 'react-swipeable';
+import BanhMiLogo from './assets/BanhMiBros-Logo.svg'
 
 interface NavigationProps {
   isOpen: boolean;
@@ -42,11 +43,14 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
                         <a href="mailto:hello@banh-mi-bros.ch">hello[at]banh-mi-bros.ch</a>
                         <p>078 480 92 23</p>
                     </div>
+                    <div className='flex self-end mt-4'>
+                        <img src={BanhMiLogo} alt="Logo" />
+                    </div>
                 </div>
             </div>
             {/* Navigation Left */}
             <div className='absolute top-4 left-4 lg:top-8 lg:left-8 flex flex-col gap-8 lg:gap-16'>
-                <nav className="flex flex-col gap-4 text-6xl md:text-8xl lg:text-9xl sm:circula-bold md:circula-extrabold lg:circula-black">
+                <nav className="flex flex-col text-7xl md:text-8xl lg:text-9xl circula-bold md:circula-extrabold lg:circula-black">
                     <a className='flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300'>
                         <h1>
                             Home
@@ -107,28 +111,32 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
                         <a href='mailto:hello@banh-mi-bros.ch'>hello[at]banh-mi-bros.ch</a>
                         <p>078 480 92 23</p>
                     </div>
+                    <div>
+                        <img src={BanhMiLogo} alt="" />
+                    </div>
                 </div>
+
                 {/* Socials (Small & Medium Screen) */}
                 <div className="flex flex-row flex-wrap gap-4 pb-4 lg:hidden font-poppins font-medium text-sm">
                     <a
                         href="#"
                         className="flex flex-row gap-2 items-center hover:text-bmb-orange transition-colors duration-300"
                     >
-                        <img className="h-6 w-6" src="./assets/icon-instagram.png" alt="" />
+                        <img className="h-6 w-6" src="./icon-instagram.png" alt="" />
                         <p>Instagram</p>
                     </a>
                     <a
                         href="#"
                         className="flex flex-row gap-2 items-center hover:text-bmb-orange transition-colors duration-300"
                     >
-                        <img className="h-6 w-6" src="./assets/icon-facebook.png" alt="" />
+                        <img className="h-6 w-6" src="./icon-facebook.png" alt="" />
                         <p>Facebook</p>
                     </a>
                     <a
                         href="#"
                         className="flex flex-row gap-2 items-center hover:text-bmb-orange transition-colors duration-300"
                     >
-                        <img className="h-6 w-6" src="./assets/icon-tiktok.png" alt="" />
+                        <img className="h-6 w-6" src="./icon-tiktok.png" alt="" />
                         <p>TikTok</p>
                     </a>
                 </div>  
@@ -136,18 +144,23 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
             {/* Socials Section (Large Screen) */}
             <div className="hidden lg:flex absolute bottom-8 left-8 gap-8 font-poppins font-medium text-xl">
                 <a href="https://instagram.com/banhmibros_ch/" className="flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300">
-                    <img className="h-8 w-8" src="./assets/icon-instagram.png" alt="" />
+                    <img className="h-8 w-8" src="./icon-instagram.png" alt="" />
                     <p>Instagram</p>
                 </a>
                 <a href="https://www.facebook.com/people/Banh-Mi-Bros/61558393710150/" className="flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300">
-                    <img className="h-8 w-8" src="./assets/icon-facebook.png" alt="" />
+                    <img className="h-8 w-8" src="./icon-facebook.png" alt="" />
                     <p>Facebook</p>
                 </a>
                 <a href="https://www.tiktok.com/@banh.mi.bros" className="flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300">
-                    <img className="h-8 w-8" src="./assets/icon-tiktok.png" alt="" />
+                    <img className="h-8 w-8" src="./icon-tiktok.png" alt="" />
                     <p>TikTok</p>
                 </a>
             </div>
+            {/* Bottom Right Logo*/}
+            <div className='absolute bottom-8 right-8'>
+
+            </div>
+
         </div>
     );
 };
