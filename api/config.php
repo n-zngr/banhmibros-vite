@@ -32,14 +32,12 @@ function loadEnvironmentConfig($env) {
 function getConfig() {
     $env = getEnvironment();
     
-    // Load the specific configuration file
     loadEnvironmentConfig($env);
 
     $config = [
         'ENVIRONMENT' => $env,
     ];
 
-    // Add database-related constants if they are defined
     if (defined('DB_SERVER')) {
         $config['DB_SERVER'] = DB_SERVER;
     }
