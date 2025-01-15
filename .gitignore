@@ -18,6 +18,9 @@ dist-ssr
 # php environment
 config.*.php
 
+# Api Config
+api/api-config.json
+
 # Vite build folder
 _dist
 
