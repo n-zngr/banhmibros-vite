@@ -51,7 +51,7 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
             {/* Navigation Left */}
             <div className='absolute top-4 left-4 lg:top-8 lg:left-8 flex flex-col flex-wrap gap-8 lg:gap-16'>
                 <nav className='inline-flex flex-col text-8xl md:text-8xl lg:text-9xl circula-bold md:circula-extrabold lg:circula-black'>
-                    <a className='flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300'>
+                    <a className='flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300' href="/">
                         <h1>
                             Home
                         </h1>

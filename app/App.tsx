@@ -56,9 +56,6 @@ function App() {
                             </div>
                             <nav className='flex flex-col gap-4 text-8xl md:text-8xl lg:text-9xl circula-bold md:circula-extrabold lg:circula-black'>
                                 <h1 className='hover:text-bmb-orange transition-colors duration-300'>
-                                    <a href="/home">Home</a>
-                                </h1>
-                                <h1 className="hover:text-bmb-orange transition-colors duration-300">
                                     <a href="/menu">Menu</a>
                                 </h1>
                                 <h1 className="hover:text-bmb-orange transition-colors duration-300">
@@ -66,6 +63,9 @@ function App() {
                                 </h1>
                                 <h1 className="hover:text-bmb-orange transition-colors duration-300">
                                     <a href="/order">Order</a>
+                                </h1>
+                                <h1 className="hover:text-bmb-orange transition-colors duration-300">
+                                    <a href="/socials">Socials</a>
                                 </h1>
                             </nav>
                             <div className='hover:text-bmb-orange transition-colors duration-300 mt-0 md:mt-8 lg:mt-8'>
