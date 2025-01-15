@@ -68,7 +68,7 @@ function App() {
                                     <a href="/contact">Contact</a>
                                 </h1>
                             </nav>
-                            <div className='hover:text-bmb-orange transition-colors duration-300 mt-8'>
+                            <div className='hover:text-bmb-orange transition-colors duration-300 mt-0 md:mt-8 lg:mt-8'>
                                 <a className="inline-flex gap-4 md:gap-8 justify-between items-center" href="#test">
                                     <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl">
                                         AUTHENTIC VIETNAMESE STREETFOOD
