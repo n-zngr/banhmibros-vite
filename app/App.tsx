@@ -27,7 +27,7 @@ function App() {
             >
                 <header className='relative w-full h-screen'>
                     {/* Toggle Navigation Button */}
-                    <div className='absolute top-8 left-8'>
+                    <div className='absolute top-8 left-8 mr-8'>
                         <div className='flex flex-col gap-8 lg:gap-16 circula-bold lg:circula-black text-white-500 transition-colors'>
                             <div className='flex'>
                                 <button
@@ -54,7 +54,7 @@ function App() {
                                     </svg>
                                 </button>
                             </div>
-                            <nav className='flex flex-col gap-4 text-6xl md:text-8xl lg:text-9xl'>
+                            <nav className='flex flex-col gap-4 text-8xl md:text-8xl lg:text-9xl circula-bold md:circula-extrabold lg:circula-black'>
                                 <h1 className='hover:text-bmb-orange transition-colors duration-300'>
                                     <a href="/home">Home</a>
                                 </h1>
@@ -68,12 +68,12 @@ function App() {
                                     <a href="/contact">Contact</a>
                                 </h1>
                             </nav>
-                            <div className='hover:text-bmb-orange transition-colors duration-300'>
-                                <a className="flex flex-row gap-8 items-center" href="#test">
-                                    <h2 className="text-wrap font-bold text-2xl md:text-4xl lg:text-6xl">
+                            <div className='hover:text-bmb-orange transition-colors duration-300 mt-8'>
+                                <a className="inline-flex gap-4 md:gap-8 justify-between items-center" href="#test">
+                                    <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl">
                                         AUTHENTIC VIETNAMESE STREETFOOD
                                     </h2>
-                                    <svg className='justify-self-center animate-arrow-down' width="32" height="48" viewBox="0 0 32 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <svg className='flex-shrink-0 animate-arrow-down' width="32" height="48" viewBox="0 0 32 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path 
                                             fillRule="evenodd"
                                             clipRule="evenodd"
