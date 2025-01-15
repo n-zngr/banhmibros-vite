@@ -65,7 +65,7 @@ function App() {
                                     <a href="/banhmi">Banh Mi</a>
                                 </h1>
                                 <h1 className="hover:text-bmb-orange transition-colors duration-300">
-                                    <a href="/contact">Contact</a>
+                                    <a href="/order">Order</a>
                                 </h1>
                             </nav>
                             <div className='hover:text-bmb-orange transition-colors duration-300 mt-0 md:mt-8 lg:mt-8'>
