@@ -21,7 +21,7 @@ function App() {
         <div {...swipeHandlers} className="relative h-dvh overflow-hidden">
             <Navigation isOpen={isOpen} setIsOpen={setIsOpen} />
             <div
-                className={`absolute inset-0 transition-transform duration-500 ease-in-out ${
+                className={`absolute inset-0 transition-transform duration-500 ${
                 isOpen ? 'translate-x-full' : ''
                 } overflow-y-auto scroll-smooth`}
             >
