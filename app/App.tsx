@@ -1,10 +1,10 @@
 import { useState } from 'react';
+import { useSwipeable } from 'react-swipeable';
 import './App.css';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import DatabaseViewer from './DatabaseViewer';
 import Navigation from './components/Navigation';
-import { useSwipeable } from 'react-swipeable';
 
 function App() {
     const [isOpen, setIsOpen] = useState(false);
