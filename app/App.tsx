@@ -21,11 +21,11 @@ function App() {
         <div {...swipeHandlers} className="relative h-dvh overflow-hidden">
             <Navigation isOpen={isOpen} setIsOpen={setIsOpen} />
             <div
-                className={`absolute inset-0 transition-transform duration-500 ${
-                isOpen ? 'translate-x-full' : ''
-                } overflow-y-auto scroll-smooth`}
+                className={`absolute inset-0 transition-transform duration-500 
+                ${ isOpen ? 'translate-x-full' : '' }
+                overflow-y-auto scroll-smooth`}
             >
-                <header className='relative w-full h-screen'>
+                <header className='relative w-full h-full'>
                     {/* Toggle Navigation Button */}
                     <div className='absolute top-8 left-8 mr-8'>
                         <div className='flex flex-col gap-8 lg:gap-16 circula-bold lg:circula-black text-white-500 transition-colors'>
@@ -54,7 +54,7 @@ function App() {
                                     </svg>
                                 </button>
                             </div>
-                            <nav className='flex flex-col gap-4 text-8xl md:text-8xl lg:text-9xl circula-bold md:circula-extrabold lg:circula-black'>
+                            <nav className='flex flex-col gap-4 text-7xl md:text-8xl lg:text-9xl circula-bold md:circula-extrabold lg:circula-black'>
                                 <h1 className='hover:text-bmb-orange transition-colors duration-300'>
                                     <a href="/menu">Menu</a>
                                 </h1>
@@ -89,7 +89,7 @@ function App() {
                             </div>
                         </div>
                     </div>
-                    <div className='h-screen'>
+                    <div className='h-full'>
                         <img
                             src='./BanhMi.png'
                             alt=''
