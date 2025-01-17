@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSwipeable } from 'react-swipeable';
-import BanhMiLogo from './assets/BanhMiBros-Logo.svg'
+import BanhMiLogo from '../assets/BanhMiBros-Logo.svg'
 
 interface NavigationProps {
   isOpen: boolean;
