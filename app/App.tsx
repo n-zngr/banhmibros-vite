@@ -88,23 +88,31 @@ function App() {
                         </div>
                     </div>
                 </header>
-                <main className='p-8'>
-                    <h1 className='text-4xl text-bmb-green' id='test'>
-                        Welcome to My App
-                    </h1>
-                    <p className="mt-4 text-lg font-bold font-poppins text-black-500">
-                        Swipe right to open the navigation, or click the button in the
-                        top-left corner.
-                    </p>
-                    <div className="flex gap-4">
-                        <a href="https://vite.dev" target="_blank">
-                            <img src={viteLogo} className="w-16 h-16" alt="Vite logo" />
-                        </a>
-                        <a href="https://react.dev" target="_blank">
-                            <img src={reactLogo} className="w-16 h-16" alt="React logo" />
-                        </a>
+                <main className='bg-white-500 flex flex-col gap-16 lg:gap-16'>
+                    <div className='px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32 font-poppins font-semibold text-4xl md:text-5xl lg:text-7xl text-black-500'>
+                        <h2>
+                            Authentic Vietnamese Streetfood has come to St.Gallen.
+                        </h2>
+                        <h2 className='pt-8'>
+                            Pick up your Banh Mi in store or order right to your doorstep. 
+                        </h2>
                     </div>
-                    <h1 className="mt-6 text-2xl">Vite + React</h1>
+                    <section className='px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32 text-white-500 bg-black-500'>
+                        <div>
+                            <h1 className='font-circula text-3xl md:circula-bold md:text-5xl lg:circula-black lg:text-9xl'>
+                                Menu
+                            </h1>
+                        </div>
+                    </section>
+                    <div className='px-4 md:px-8 lg:px-16 font-poppins font-semibold text-5xl md:text-6xl lg:text-7xl text-black-500'>
+                        <h2>
+                            Quality before quantity. 
+                        </h2>
+                        <h2>
+                            We hand-craft your Banh Mi only with the best ingredients. 
+                        </h2>
+
+                    </div>
                     <DatabaseViewer />
                 </main>
             </div>
