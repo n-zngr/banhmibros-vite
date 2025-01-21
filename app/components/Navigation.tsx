@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSwipeable } from 'react-swipeable';
-import BanhMiLogo from '../assets/BanhMiBros-Logo.svg'
+import BanhMiLogo from '../assets/logo-banhmibros-black.svg';
 
 interface NavigationProps {
   isOpen: boolean;
@@ -21,7 +21,7 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
             isOpen ? 'translate-x-0' : '-translate-x-full'
             }`}
         >
-            {/* Navigation Right */}
+            {/* Navigation Right - Information */}
             <div className='absolute z-50 top-4 right-4 lg:top-8 lg:right-8 flex flex-col gap-8'>
                 <button
                     className="self-end duration-200 hover:text-bmb-orange"
@@ -32,7 +32,6 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
                         <path d="M2.82843 0L25.4558 22.6274L22.6274 25.4558L0 2.82843L2.82843 0Z"/>
                     </svg>
                 </button>
-                {/* Address Section (Large Screens) */}
                 <div className="hidden md:flex flex-col text-right gap-4 font-medium text-sm md:text-base lg:text-xl">
                     <h1 className="text-3xl md:text-4xl lg:text-6xl circula-bold">Banh Mi Bros</h1>
                     <div>
@@ -43,12 +42,26 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
                         <a className='hover:text-bmb-orange transition-colors duration-300' href='mailto:hello@banh-mi-bros.ch'>hello[at]banh-mi-bros.ch</a>
                         <a className='hover:text-bmb-orange transition-colors duration-300' href='tel:0784809223'>078 480 92 23</a>
                     </div>
+                    <div className="hidden md:flex lg:flex md:flex-col lg:flex-col mt-4 md:text-base items-end gap-2 font-poppins font-medium lg:text-xl">
+                        <a href="https://instagram.com/banhmibros_ch/" className="flex flex-row md:gap-2 lg:gap-3 items-center hover:text-bmb-orange transition-colors duration-300">
+                            <p>Instagram</p>
+                            <img className="lg:h-6 lg:w-6 md:h-5 md:w-5" src="./icon-instagram.png" alt="Instagram Icon" />
+                        </a>
+                        <a href="https://www.facebook.com/people/Banh-Mi-Bros/61558393710150/" className="flex flex-row md:gap-2 lg:gap-3 items-center hover:text-bmb-orange transition-colors duration-300">
+                            <p>Facebook</p>
+                            <img className="lg:h-6 lg:w-6 md:h-5 md:w-5" src="./icon-facebook.png" alt="Facebook Icon" />
+                        </a>
+                        <a href="https://www.tiktok.com/@banh.mi.bros" className="flex flex-row md:gap-2 lg:gap-3 items-center hover:text-bmb-orange transition-colors duration-300">
+                            <p>TikTok</p>
+                            <img className="lg:h-6 lg:w-6 md:h-5 md:w-5" src="./icon-tiktok.png" alt="TikTok Icon" />
+                        </a>
+                    </div>
                     <div className='flex self-end mt-4'>
-                        <img src={BanhMiLogo} alt="Logo" />
+                        <img src={BanhMiLogo} className='md:w-24 lg:w-32' alt="Logo" />
                     </div>
                 </div>
             </div>
-            {/* Navigation Left */}
+            {/* Navigation Left - Links */}
             <div className='absolute top-4 left-4 lg:top-8 lg:left-8 flex flex-col flex-wrap gap-8 lg:gap-16'>
                 <nav className='inline-flex flex-col text-8xl md:text-8xl lg:text-9xl circula-bold md:circula-extrabold lg:circula-black'>
                     <a className='flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300' href="/">
@@ -121,42 +134,25 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
                         <a className='hover:text-bmb-orange transition-colors duration-300' href='mailto:hello@banh-mi-bros.ch'>hello[at]banh-mi-bros.ch</a>
                         <a className='hover:text-bmb-orange transition-colors duration-300' href='tel:0784809223'>078 480 92 23</a>
                     </div>
-                    <div className='mt-2'>
-                        <img src={BanhMiLogo} alt="" />
-                    </div>
                 </div>
 
-                {/* Socials (Small & Medium Screen) */}
-                <div className="flex flex-row w-screen flex-wrap gap-4 pb-4 lg:hidden font-poppins font-medium text-sm">
+                {/* Socials (Small Screen) */}
+                <div className="flex flex-row w-screen flex-wrap gap-4 pb-4 md:hidden lg:hidden font-poppins font-medium text-sm">
                     <a href="https://instagram.com/banhmibros_ch/" className="flex flex-row gap-2 items-center hover:text-bmb-orange transition-colors duration-300 min-w-0">
-                        <img className="h-6 w-6" src="./icon-instagram.png" alt="Instagram Icon" />
+                        <img className="h-4 w-4" src="./icon-instagram.png" alt="Instagram Icon" />
                         <p>Instagram</p>
                     </a>
                     <a href="https://www.facebook.com/people/Banh-Mi-Bros/61558393710150/" className="flex flex-row gap-2 items-center hover:text-bmb-orange transition-colors duration-300 min-w-0">
-                        <img className="h-6 w-6" src="./icon-facebook.png" alt="Facebook Icon" />
+                        <img className="h-4 w-4" src="./icon-facebook.png" alt="Facebook Icon" />
                         <p>Facebook</p>
                     </a>
                     <a href="https://www.tiktok.com/@banh.mi.bros" className="flex flex-row gap-2 pr-4 items-center hover:text-bmb-orange transition-colors duration-300 min-w-0">
-                        <img className="h-6 w-6" src="./icon-tiktok.png" alt="TikTok Icon" />
+                        <img className="h-4 w-4" src="./icon-tiktok.png" alt="TikTok Icon" />
                         <p>TikTok</p>
                     </a>
                 </div>
             </div>
             {/* Socials Section (Large Screen) */}
-            <div className="hidden lg:flex absolute bottom-8 left-8 gap-8 font-poppins font-medium text-xl">
-                <a href="https://instagram.com/banhmibros_ch/" className="flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300">
-                    <img className="h-8 w-8" src="./icon-instagram.png" alt="Instagram Icon" />
-                    <p>Instagram</p>
-                </a>
-                <a href="https://www.facebook.com/people/Banh-Mi-Bros/61558393710150/" className="flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300">
-                    <img className="h-8 w-8" src="./icon-facebook.png" alt="Facebook Icon" />
-                    <p>Facebook</p>
-                </a>
-                <a href="https://www.tiktok.com/@banh.mi.bros" className="flex flex-row gap-4 items-center hover:text-bmb-orange transition-colors duration-300">
-                    <img className="h-8 w-8" src="./icon-tiktok.png" alt="TikTok Icon" />
-                    <p>TikTok</p>
-                </a>
-            </div>
         </div>
     );
 };
