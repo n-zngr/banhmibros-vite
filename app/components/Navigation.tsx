@@ -24,7 +24,7 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
             {/* Navigation Right - Information */}
             <div className='absolute z-50 top-4 right-4 lg:top-8 lg:right-8 flex flex-col gap-8'>
                 <button
-                    className="self-end duration-200 hover:text-bmb-orange"
+                    className="self-end mt-2 md:mt-0 duration-200 hover:text-bmb-orange"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     <svg width="26" height="26" viewBox="0 0 26 26" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
