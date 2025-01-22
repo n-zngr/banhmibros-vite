@@ -66,7 +66,7 @@ function App() {
                         </h1>
                     </nav>
                     <div className='flex flex-wrap items-center hover:text-bmb-orange transition-colors duration-300 my-0 sm:my-4 xl:my-8'>
-                        <a className="inline-flex items-center gap-4 md:gap-8" href="#test">
+                        <a className="inline-flex items-center gap-4 sm:gap-8" href="#test">
                             <h2 className="flex flex-wrap flex-1 font-extrabold text-3xl sm:text-4xl xl:text-5xl">
                                 AUTHENTIC VIETNAMESE STREETFOOD
                             </h2>
