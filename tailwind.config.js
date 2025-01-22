@@ -69,17 +69,17 @@ export default {
                 },
                 '.circula-extrabold': {
                     fontFamily: 'Circula, sans-serif',
-                    fontWeight: '800',
+                    fontWeight: '800 !important',
                     WebkitTextStroke: '0.125rem currentColor',
                     textStroke: '0.125rem currentColor',
                 },
                 '.circula-black': {
                     fontFamily: 'Circula, sans-serif',
-                    fontWeight: '900',
+                    fontWeight: '900 !important',
                     WebkitTextStroke: '0.25rem currentColor',
                     textStroke: '0.25rem currentColor',
                 },
-            })
+            });
         }),
     ]
 }
