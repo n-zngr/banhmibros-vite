@@ -51,7 +51,7 @@ function App() {
                                 </svg>
                             </button>
                         </div>
-                        <nav className='flex flex-col gap-4 text-8xl md:text-8xl lg:text-9xl circula-bold md:circula-extrabold lg:circula-black'>
+                        <nav className='flex flex-col 2xl:gap-4 text-8xl md:text-8xl lg:text-9xl circula-bold md:circula-extrabold lg:circula-black'>
                             <h1 className='hover:text-bmb-orange transition-colors duration-300'>
                                 <a href="/menu">Menu</a>
                             </h1>
