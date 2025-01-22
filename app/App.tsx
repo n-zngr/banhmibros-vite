@@ -24,7 +24,7 @@ function App() {
                 overflow-y-auto scroll-smooth`}
             >
                 <header>
-                    <div className='flex flex-col min-h-dvh bg-cover bg-center gap-8 xl:gap-16 p-8 circula-bold lg:circula-black text-white-500 transition-colors'
+                    <div className='flex flex-col min-h-dvh bg-cover bg-center gap-8 2xl:gap-16 p-8 circula-bold lg:circula-black text-white-500 transition-colors'
                         style={{ backgroundImage: "url('./BanhMi.png')" }}>
                         <div className='flex'>
                             <button
@@ -65,7 +65,7 @@ function App() {
                                 <a href="/socials">Socials</a>
                             </h1>
                         </nav>
-                        <div className='flex flex-wrap items-center hover:text-bmb-orange transition-colors duration-300 my-0 md:my-8 lg:my-4 xl:my-8'>
+                        <div className='flex flex-wrap items-center hover:text-bmb-orange transition-colors duration-300 my-0 md:my-8 lg:my-4 2xl:my-8'>
                             <a className="inline-flex items-center gap-4 md:gap-8" href="#test">
                                 <h2 className="flex flex-wrap flex-1 font-bold text-3xl md:text-4xl lg:text-5xl">
                                     AUTHENTIC VIETNAMESE STREETFOOD
