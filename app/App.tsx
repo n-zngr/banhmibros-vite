@@ -19,12 +19,12 @@ function App() {
         <div {...swipeHandlers} className="relative h-dvh overflow-hidden">
             <Navigation isOpen={isOpen} setIsOpen={setIsOpen} />
             <div
-                className={`absolute inset-0 transition-transform duration-500 
+                className={`absolute inset-0 transition-transform duration-500 overflow-hidden
                 ${ isOpen ? 'translate-x-full' : '' }
                 overflow-y-auto scroll-smooth`}
             >
                 <header>
-                    <div className='flex flex-col min-h-screen bg-cover bg-center gap-8 lg:gap-16 p-8 circula-bold lg:circula-black text-white-500 transition-colors'
+                    <div className='flex flex-col min-h-dvh bg-cover bg-center gap-8 lg:gap-12 p-8 circula-bold lg:circula-black text-white-500 transition-colors'
                         style={{ backgroundImage: "url('./BanhMi.png')" }}>
                         <div className='flex'>
                             <button
@@ -65,12 +65,12 @@ function App() {
                                 <a href="/socials">Socials</a>
                             </h1>
                         </nav>
-                        <div className='hover:text-bmb-orange transition-colors duration-300 my-0 md:my-8 lg:my-8'>
-                            <a className="inline-flex gap-4 md:gap-8 justify-between items-center" href="#test">
-                                <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl">
+                        <div className='flex flex-wrap items-center hover:text-bmb-orange transition-colors duration-300 my-0 md:my-8 lg:my-8'>
+                            <a className="inline-flex items-center gap-4 md:gap-8" href="#test">
+                                <h2 className="flex flex-wrap flex-1 font-bold text-3xl md:text-4xl lg:text-5xl">
                                     AUTHENTIC VIETNAMESE STREETFOOD
                                 </h2>
-                                <svg className='flex-shrink-0 animate-arrow-down' width="32" height="48" viewBox="0 0 32 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <svg className='flex-shrink-0 animate-arrow-down mr-8' width="32" height="48" viewBox="0 0 32 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path 
                                         fillRule="evenodd"
                                         clipRule="evenodd"
