@@ -24,7 +24,7 @@ function App() {
                 overflow-y-auto scroll-smooth`}
             >
                 <header>
-                    <div className='flex flex-col min-h-dvh bg-cover bg-center gap-8 2xl:gap-16 p-8 circula-bold lg:circula-black text-white-500 transition-colors'
+                    <div className='flex flex-col min-h-dvh bg-cover bg-center gap-8 2xl:gap-16 p-4 md:p-8 circula-bold lg:circula-black text-white-500 transition-colors'
                         style={{ backgroundImage: "url('./BanhMi.png')" }}>
                         <div className='flex'>
                             <button
@@ -51,7 +51,7 @@ function App() {
                                 </svg>
                             </button>
                         </div>
-                        <nav className='flex flex-col 2xl:gap-4 text-8xl md:text-8xl lg:text-9xl circula-bold md:circula-extrabold lg:circula-black'>
+                        <nav className='flex flex-col 2xl:gap-4 text-8xl 2xl:text-9xl circula-bold md:circula-extrabold lg:circula-black'>
                             <h1 className='hover:text-bmb-orange transition-colors duration-300'>
                                 <a href="/menu">Menu</a>
                             </h1>
@@ -65,9 +65,9 @@ function App() {
                                 <a href="/socials">Socials</a>
                             </h1>
                         </nav>
-                        <div className='flex flex-wrap items-center hover:text-bmb-orange transition-colors duration-300 my-0 md:my-8 lg:my-4 2xl:my-8'>
+                        <div className='flex flex-wrap items-center hover:text-bmb-orange transition-colors duration-300 my-0 md:my-4 2xl:my-8'>
                             <a className="inline-flex items-center gap-4 md:gap-8" href="#test">
-                                <h2 className="flex flex-wrap flex-1 font-bold text-3xl md:text-4xl lg:text-5xl">
+                                <h2 className="flex flex-wrap flex-1 font-bold text-3xl md:text-4xl 2xl:text-5xl">
                                     AUTHENTIC VIETNAMESE STREETFOOD
                                 </h2>
                                 <svg className='flex-shrink-0 animate-arrow-down mr-8' width="32" height="48" viewBox="0 0 32 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
