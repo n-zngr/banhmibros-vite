@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import './App.css';
+import Headline from './components/Headline';
 import Menu from './components/Menu';
 import DatabaseViewer from './DatabaseViewer';
 import Navigation from './components/Navigation';
@@ -86,14 +87,10 @@ function App() {
                     </div>
                 </header>
                 <main className='bg-white-500 flex flex-col gap-16 lg:gap-16'>
-                    <div className='px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32 font-poppins font-semibold text-3xl md:text-5xl lg:text-7xl text-black-500' id='test'>
-                        <h2>
-                            Authentic Vietnamese Streetfood has come to St.Gallen.
-                        </h2>
-                        <h2 className='pt-8 lg:pt-16'>
-                            Pick up your Banh Mi in store or order right to your doorstep. 
-                        </h2>
-                    </div>
+                    <Headline>
+                        <h2 data-en="Authentic Vietnamese Streetfood has come to St.Gallen." data-de="Banh Mis gibts nun auch in St.Gallen." />
+                        <h2 data-en="Pick up your Banh Mi in store or order right to your doorstep." data-de="Hol's dir im Store, oder lass es direkt nach Hause liefern." />
+                    </Headline>
                     <section className='px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32 text-white-500 bg-black-500'>
                         <Menu />
                     </section>
