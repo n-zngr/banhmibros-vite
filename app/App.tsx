@@ -5,6 +5,7 @@ import Headline from './components/Headline';
 import Menu from './components/Menu';
 import DatabaseViewer from './DatabaseViewer';
 import Navigation from './components/Navigation';
+import AnimatedText from './AnimatedText';
 
 function App() {
     const [isOpen, setIsOpen] = useState(false);
@@ -91,6 +92,9 @@ function App() {
                         <h2 data-en="Authentic Vietnamese Streetfood has come to St.Gallen." data-de="Banh Mis gibts nun auch in St.Gallen." />
                         <h2 data-en="Pick up your Banh Mi in store or order right to your doorstep." data-de="Hol's dir im Store, oder lass es direkt nach Hause liefern." />
                     </Headline>
+                    <div className="min-h-[200vh] bg-black text-white flex items-center justify-center">
+                        <AnimatedText text="This is a scroll-synced highlight animation." />
+                    </div>
                     <section className='px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32 text-white-500 bg-black-500'>
                         <Menu />
                     </section>
@@ -101,7 +105,6 @@ function App() {
                         <h2>
                             We hand-craft your Banh Mi only with the best ingredients. 
                         </h2>
-
                     </div>
                     <DatabaseViewer />
                 </main>
