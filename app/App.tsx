@@ -1,15 +1,17 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import './App.css';
 import Headline from './components/Headline';
 import Menu from './components/Menu';
 import DatabaseViewer from './DatabaseViewer';
 import Navigation from './components/Navigation';
+import AnimatedSquare from './AnimatedSquare';
 import AnimatedText from './AnimatedText';
 
 function App() {
     const [isOpen, setIsOpen] = useState(false);
     const [navHover, setNavHover] = useState(false);
+    const scrollRef = useRef<HTMLDivElement>(null);
 
     const swipeHandlers = useSwipeable({
         onSwipedLeft: () => setIsOpen(false),
@@ -22,6 +24,7 @@ function App() {
         <div {...swipeHandlers} className="relative h-dvh overflow-hidden">
             <Navigation isOpen={isOpen} setIsOpen={setIsOpen} />
             <div
+                ref={scrollRef}
                 className={`absolute inset-0 transition-transform duration-500 overflow-hidden
                 ${ isOpen ? 'translate-x-full' : '' }
                 overflow-y-auto scroll-smooth`}
@@ -92,9 +95,11 @@ function App() {
                         <h2 data-en="Authentic Vietnamese Streetfood has come to St.Gallen." data-de="Banh Mis gibts nun auch in St.Gallen." />
                         <h2 data-en="Pick up your Banh Mi in store or order right to your doorstep." data-de="Hol's dir im Store, oder lass es direkt nach Hause liefern." />
                     </Headline>
-                    <div className="min-h-[200vh] bg-black text-white flex items-center justify-center">
-                        <AnimatedText text="This is a scroll-synced highlight animation." />
-                    </div>
+                    {/*<AnimatedSquare scrollRef={scrollRef}/>*/}
+                    <AnimatedText 
+                        text="This text will change color as you scroll!"
+                        scrollRef={scrollRef}
+                    />
                     <section className='px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32 text-white-500 bg-black-500'>
                         <Menu />
                     </section>
