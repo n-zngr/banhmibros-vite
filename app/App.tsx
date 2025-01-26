@@ -5,8 +5,8 @@ import Headline from './components/Headline';
 import Menu from './components/Menu';
 import DatabaseViewer from './DatabaseViewer';
 import Navigation from './components/Navigation';
-import AnimatedSquare from './AnimatedSquare';
 import AnimatedText from './AnimatedText';
+import Button from './components/Button';
 
 function App() {
     const [isOpen, setIsOpen] = useState(false);
@@ -107,6 +107,9 @@ function App() {
                         <h2>
                             Quality before quantity. 
                         </h2>
+                        <Button>
+                            
+                        </Button>
                         <h2>
                             We hand-craft your Banh Mi only with the best ingredients. 
                         </h2>
