@@ -6,6 +6,16 @@ export default {
         './index.html',
         './app/**/*.{js,ts,jsx,tsx}',
     ],
+    safelist: [
+        {
+            pattern: /text-(red|green|blue|black|yellow|gray|pink|indigo|purple|orange)-(100|200|300|400|500|600|700|800|900)/,
+            variants: ['hover', 'focus'],
+          },
+          {
+            pattern: /border-(red|green|blue|black|yellow|gray|pink|indigo|purple|orange)-(100|200|300|400|500|600|700|800|900)/,
+            variants: ['hover', 'focus'],
+          },
+    ],
     theme: {
         extend: {
             fontFamily: {

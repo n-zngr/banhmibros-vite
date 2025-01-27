@@ -102,13 +102,16 @@ function App() {
                     />
                     <section className='px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32 text-white-500 bg-black-500'>
                         <Menu />
+                        <Button color='white-500'>
+                            BIg
+                        </Button>
                     </section>
                     <div className='px-4 md:px-8 lg:px-16 font-poppins font-semibold text-5xl md:text-6xl lg:text-7xl text-black-500'>
                         <h2>
                             Quality before quantity. 
                         </h2>
                         <Button>
-                            
+                            Small
                         </Button>
                         <h2>
                             We hand-craft your Banh Mi only with the best ingredients. 
