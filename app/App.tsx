@@ -7,6 +7,7 @@ import DatabaseViewer from './DatabaseViewer';
 import Navigation from './components/Navigation';
 import AnimatedText from './AnimatedText';
 import Button from './components/Button';
+import Reviews from './components/Reviews';
 
 function App() {
     const [isOpen, setIsOpen] = useState(false);
@@ -118,6 +119,7 @@ function App() {
                         </h2>
                     </div>
                     <DatabaseViewer />
+                    <Reviews />
                 </main>
             </div>
         </div>
