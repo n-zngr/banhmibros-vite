@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-export default function Button({ color = "black-500", children }: { color?: string; children: React.ReactNode } ) {
+export default function Button({ color = "black-500", children }: { color?: string; children: React.ReactNode }) {
     const [hover, setHover] = useState(false);
     const borderColor = `border-${color}`;
     const textColor = `text-${color}`;
