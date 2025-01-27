@@ -27,7 +27,7 @@ export default function Button({ color = "black-500", children }: { color?: stri
 
     return (
         <button
-            className={`group relative flex justify-center items-center gap-8 rounded-full py-4 px-10 border-4 ${borderColor} overflow-hidden`}
+            className={`group relative flex justify-center items-center gap-8 rounded-full py-4 px-10 border-4 ${textColor} ${borderColor} overflow-hidden`}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
         >
@@ -52,7 +52,7 @@ export default function Button({ color = "black-500", children }: { color?: stri
             </motion.p>
         </div>
 
-        <div className="flex items-center justify-center relative w-8 h-12 overflow-hidden">
+        <div className={`flex items-center justify-center relative w-8 h-12 overflow-hidden`}>
             <motion.svg
                 className="absolute"
                 width="32"
