@@ -93,16 +93,19 @@ function App() {
                 </header>
                 <main className='bg-white-500 flex flex-col gap-16 lg:gap-16'>
                     <Headline>
+                        <AnimatedText
+                            text="This text animates with container scroll!" 
+                            scrollRef={scrollRef}
+                        />
                         <h2 data-en="Authentic Vietnamese Streetfood has come to St.Gallen." data-de="Banh Mis gibts nun auch in St.Gallen." />
                         <h2 data-en="Pick up your Banh Mi in store or order right to your doorstep." data-de="Hol's dir im Store, oder lass es direkt nach Hause liefern." />
                     </Headline>
-                    {/*<AnimatedSquare scrollRef={scrollRef}/>*/}
-                    <AnimatedText 
-                        text="This text will change color as you scroll!"
-                        scrollRef={scrollRef}
-                    />
                     <section className='px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32 text-white-500 bg-black-500'>
                         <Menu />
+                        <AnimatedText
+                            text="This text animates with container scroll!" 
+                            scrollRef={scrollRef}
+                        />
                         <Button color='white-500'>
                             Big
                         </Button>

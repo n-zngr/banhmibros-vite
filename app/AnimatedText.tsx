@@ -1,52 +1,37 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-interface AnimatedTextProps {
+type AnimatedTextProps = {
     text: string;
-    scrollRef: React.RefObject<HTMLDivElement>;
-}
+    scrollRef: React.RefObject<HTMLElement>;
+};
 
 const AnimatedText: React.FC<AnimatedTextProps> = ({ text, scrollRef }) => {
-    const textRef = useRef(null);
-    const isInView = useInView(textRef, { once: false, amount: 0.5 });
-    const { scrollYProgress } = useScroll({ 
-        container: scrollRef, 
-        layoutEffect: false,
-        target: textRef,
-        offset: ["start end", "end start"]
+    const ref = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        container: scrollRef,
+        offset: ["0 1", "0 0.25"]
     });
 
-    /*useEffect(() => {
-        const unsubscribe = scrollY.on('change', value => {
-            console.log("Scroll Y:", value);
-        });
-
-        return () => unsubscribe();
-    }, [scrollY]);*/
-
     return (
-        <motion.div ref={textRef} className="text-3xl font-bold whitespace-pre-wrap">
-            {text.split('').map((char, index) => {
-                const charColor = useTransform(
+        <div ref={ref} style={{ overflow: "hidden" }}>
+            {text.split("").map((char, index) => {
+                const colorProgress = useTransform(
                     scrollYProgress,
-                    [0, 0.5, 1],
-                    ['#8E8983', 'rgb(29 26 23)', 'rgb(29 26 23)']
+                    [index / text.length, (index + 1) / text.length],
+                    ["#8E8983", "#1D1A17"]
                 );
-
                 return (
-                    <motion.span
-                        key={index}
-                        style={{
-                            display: 'inline-block',
-                            color: charColor,
-                            transition: `color 0.5s ease ${index * 0.05}s`
-                        }}
-                    >
-                        {char}
-                    </motion.span>
+                <motion.span
+                    key={index}
+                    style={{ display: "inline-block", color: colorProgress }}
+                >
+                    {char}
+                </motion.span>
                 );
             })}
-        </motion.div>
+        </div>
     );
 };
 
