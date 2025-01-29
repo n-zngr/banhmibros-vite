@@ -29,6 +29,7 @@ function App() {
                 className={`absolute inset-0 transition-transform duration-500 overflow-hidden
                 ${ isOpen ? 'translate-x-full' : '' }
                 overflow-y-auto scroll-smooth`}
+                style={{ contain: 'strict' }}
             >
                 <header className='flex flex-col min-h-dvh bg-cover bg-center gap-8 p-4 sm:p-8 text-white-500 transition-colors'
                     style={{ backgroundImage: "url('./BanhMi.png')" }}>
@@ -93,19 +94,15 @@ function App() {
                 </header>
                 <main className='bg-white-500 flex flex-col gap-16 lg:gap-16'>
                     <Headline>
-                        <AnimatedText
-                            text="This text animates with container scroll!" 
-                            scrollRef={scrollRef}
+                        <AnimatedText scrollRef={scrollRef}
+                            data-en="Authentic Vietnamese Streetfood has come to St.Gallen. Pick up your Banh Mi in store or order right to your doorstep."
+                            data-de="Banh Mis gibts nun auch in St.Gallen. Hol's dir im Store, oder lass es direkt nach Hause liefern."
                         />
-                        <h2 data-en="Authentic Vietnamese Streetfood has come to St.Gallen." data-de="Banh Mis gibts nun auch in St.Gallen." />
-                        <h2 data-en="Pick up your Banh Mi in store or order right to your doorstep." data-de="Hol's dir im Store, oder lass es direkt nach Hause liefern." />
+                        {/*<h2 data-en="Authentic Vietnamese Streetfood has come to St.Gallen." data-de="Banh Mis gibts nun auch in St.Gallen." />
+                        <h2 data-en="Pick up your Banh Mi in store or order right to your doorstep." data-de="Hol's dir im Store, oder lass es direkt nach Hause liefern." />*/}
                     </Headline>
                     <section className='px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32 text-white-500 bg-black-500'>
                         <Menu />
-                        <AnimatedText
-                            text="This text animates with container scroll!" 
-                            scrollRef={scrollRef}
-                        />
                         <Button color='white-500'>
                             Big
                         </Button>
