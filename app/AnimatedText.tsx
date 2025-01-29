@@ -15,9 +15,6 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, scrollRef }) => {
         layoutEffect: false
     });
 
-    const defaultColor = "#8E8983";
-    const targetColor = "#1D1A17";
-
     return (
         <div ref={ref} style={{ overflow: "hidden" }}>
             {text.split("").map((char, index) => (
@@ -28,7 +25,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, scrollRef }) => {
                         color: useTransform(
                             scrollYProgress,
                             [index / text.length, (index + 1) / text.length],
-                            [defaultColor, targetColor]
+                            ["#8E8983", "#1D1A17"]
                         )
                     }}
                 >
