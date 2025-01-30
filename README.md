@@ -11,3 +11,12 @@
 - [php](https://www.php.net/), Server-Side Programming Language
 - [MySQL](https://www.mysql.com/), Datebase
 - [ZNGR DYNAMICS](https://zngr-dynamics.ch/), Hosting
+
+## Project Documentation
+The project documentation is located under the project's workspace which is not publicly available.
+The Documents page includes:
+- Local Setup and Installation
+- Frontend and Styling Guide
+- Project Architecture
+- Backend and API
+- Deployment and Hosting
