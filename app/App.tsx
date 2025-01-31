@@ -8,6 +8,7 @@ import Navigation from './components/Navigation';
 import AnimatedText from './AnimatedText';
 import Button from './components/Button';
 import Reviews from './components/Reviews';
+import Footer from './components/Footer';
 
 function App() {
     const [isOpen, setIsOpen] = useState(false);
@@ -58,18 +59,18 @@ function App() {
                             </svg>
                         </button>
                     </div>
-                    <nav className='flex flex-col xl:gap-4 text-8xl xl:text-9xl circula-bold sm:circula-extrabold xl:circula-black'>
+                    <nav className='flex flex-col xl:gap-4 text-8xl xl:text-9xl'>
                         <h1 className='hover:text-bmb-orange transition-colors duration-300'>
-                            <a href="/menu">Menu</a>
+                            <a className='font-circula circula-bold sm:circula-extrabold xl:circula-black' href="/menu">Menu</a>
                         </h1>
                         <h1 className="hover:text-bmb-orange transition-colors duration-300">
-                            <a href="/banhmi">Banh Mi</a>
+                            <a className='circula-bold sm:circula-extrabold xl:circula-black' href="/banhmi">Banh Mi</a>
                         </h1>
                         <h1 className="hover:text-bmb-orange transition-colors duration-300">
-                            <a href="/order">Order</a>
+                            <a className='circula-bold sm:circula-extrabold xl:circula-black' href="/order">Order</a>
                         </h1>
                         <h1 className="hover:text-bmb-orange transition-colors duration-300">
-                            <a href="/socials">Socials</a>
+                            <a className='circula-bold sm:circula-extrabold xl:circula-black' href="/socials">Socials</a>
                         </h1>
                     </nav>
                     <div className='flex flex-wrap items-center hover:text-bmb-orange transition-colors duration-300 my-0 sm:my-4 xl:my-8'>
@@ -92,7 +93,7 @@ function App() {
                         </a>
                     </div>
                 </header>
-                <main className='bg-white-500 flex flex-col gap-16 lg:gap-16'>
+                <main className='bg-white-500 flex flex-col gap-16 lg:gap-16' id='test'>
                     <Headline>
                         <AnimatedText scrollRef={scrollRef}
                             data-en="Authentic Vietnamese Streetfood has come to St.Gallen. Pick up your Banh Mi in store or order right to your doorstep."
@@ -121,6 +122,9 @@ function App() {
                     <DatabaseViewer />
                     <Reviews />
                 </main>
+                <footer>
+                    <Footer />
+                </footer>
             </div>
         </div>
     );

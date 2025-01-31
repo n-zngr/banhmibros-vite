@@ -6,7 +6,7 @@
     h1 {
       font-family: 'Circula';
     }
-    h2, h3, p {
+    h2, h3, p, a {
         font-family: 'Poppins';
     }
 }
