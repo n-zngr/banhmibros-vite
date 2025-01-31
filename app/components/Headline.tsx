@@ -9,7 +9,7 @@ type Language = 'en' | 'de';
 type DataAttribute = `data-${Language}`;
 
 const Headline: React.FC<HeadlineProps> = ({ children }) => {
-    const [browserLanguage, setBrowserLanguage] = useState<Language>('en');
+    const [browserLanguage, setBrowserLanguage] = useState<'en' | 'de'>('en');
 
     useEffect(() => {
         setBrowserLanguage(navigator.language.startsWith('de') ? 'de' : 'en');
