@@ -1,26 +1,25 @@
 import { useState, useEffect } from 'react';
+import Link from './Link';
 
 const Footer: React.FC = () => {
     const [lang, setLang] = useState<'en' | 'de'>('en');
   
     useEffect(() => {
-      // Set language based on browser settings
-      const browserLang = navigator.language.split('-')[0];
-      setLang(browserLang === 'de' ? 'de' : 'en');
+        const browserLang = navigator.language.split('-')[0];
+        setLang(browserLang === 'de' ? 'de' : 'en'); // Defines variable by browser language
+    
+        const updateContent = () => { // Updates content based on language
+            const elements = document.querySelectorAll<HTMLElement>('[data-en][data-de]');
+            
+            elements.forEach((element) => {
+                element.textContent = element.dataset[lang] || '';
+            });
+        };
   
-      // Update content based on language
-      const updateContent = () => {
-        const elements = document.querySelectorAll<HTMLElement>('[data-en][data-de]');
-        elements.forEach((element) => {
-          element.textContent = element.dataset[lang] || '';
-        });
-      };
+        updateContent();
   
-      updateContent();
-  
-      // Re-run updateContent if lang changes
-      window.addEventListener('languagechange', updateContent);
-      return () => window.removeEventListener('languagechange', updateContent);
+        window.addEventListener('languagechange', updateContent); // Re-runs updateContent() if lang changes
+        return () => window.removeEventListener('languagechange', updateContent);
     }, [lang]);
     
     return (
@@ -46,14 +45,15 @@ const Footer: React.FC = () => {
                     <a href="/order">TikTok</a>
                     <a href="/process">FaceBook</a>
                 </div>
-                <div>
-                    <a href="">Site by <span className="font-medium text-white-500">ZNGR</span></a>
+                <div className='ml-auto'>
+                    <a href="https://zngr-dynamics.ch">Site by <span className="font-medium text-white-500">ZNGR</span></a>
                 </div>
             </div>
-            <div className="py-16">
+            <div className="flex flex-row py-16 gap-16">
                 <a href="" data-en="Imprint" data-de="Impressum"></a>
                 <a href="" data-en="Privacy Policy" data-de="Datenschutz"></a>
             </div>
+            <Link href="/about">About Us</Link>
         </section>
     )
 }
